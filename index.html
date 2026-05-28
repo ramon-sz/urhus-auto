@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================== SEO ===================== -->
+<title>URHUS AUTO — Nettoyage Automobile Mobile 100% à Domicile</title>
+<meta name="description" content="URHUS AUTO : nettoyage automobile 100% mobile pour particuliers et professionnels. Nous nous déplaçons chez vous. Nettoyage de véhicules, matelas, canapés et tapis. Devis gratuit.">
+<meta name="keywords" content="nettoyage automobile, nettoyage auto mobile, detailing voiture, nettoyage canapé, nettoyage matelas, nettoyage tapis, lavage voiture domicile, URHUS AUTO">
+<meta name="robots" content="index, follow">
+<meta name="author" content="URHUS AUTO">
+<link rel="canonical" href="https://www.urhusauto.fr/">
+
+<!-- Open Graph (réseaux sociaux) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="URHUS AUTO — Nettoyage Automobile Mobile">
+<meta property="og:description" content="Nettoyage automobile 100% mobile. Particuliers & professionnels. Véhicules, matelas, canapés, tapis.">
+<meta property="og:image" content="assets/images/logo.png">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Données structurées : aide énormément le référencement local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "URHUS AUTO",
+  "description": "Nettoyage automobile 100% mobile pour particuliers et professionnels. Nettoyage de véhicules, matelas, canapés et tapis.",
+  "image": "assets/images/logo.png",
+  "telephone": "+33 6 35 54 02 20",
+  "priceRange": "€€",
+  "areaServed": "Île-de-France",
+  "openingHours": "Mo-Sa 08:00-19:00",
+  "serviceType": ["Nettoyage automobile", "Nettoyage de canapé", "Nettoyage de matelas", "Nettoyage de tapis"]
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+<!-- ===================== POLICES (3 polices distinctes) ===================== -->
+<!-- Display : Anton (titres percutants) | Accent : Sora (sous-titres/boutons) | Corps : Manrope (texte) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ========================================================================
+   URHUS AUTO — Feuille de style
+   Ambiance MIXTE : hero sombre béton/néon rouge → reste du site clair & épuré
+   ======================================================================== */
+
+:root{
+  --rouge:      #e8141b;
+  --rouge-vif:  #ff2a2a;
+  --rouge-soft: #fff0f0;
+  --noir:       #0a0a0c;
+  --noir-2:     #131316;
+  --beton:      #1c1c20;
+
+  --blanc:      #ffffff;
+  --creme:      #f7f6f4;
+  --gris-bg:    #f0efec;
+  --encre:      #16161a;   /* texte principal sur fond clair */
+  --gris:       #6c6c74;   /* texte secondaire sur fond clair */
+  --gris-line:  #e3e2de;   /* bordures claires */
+
+  --font-display: 'Barlow Condensed', sans-serif;   /* Titres impact */
+  --font-accent:  'Plus Jakarta Sans', sans-serif;  /* Nav / boutons */
+  --font-body:    'Plus Jakarta Sans', sans-serif;  /* Corps de texte */
+  --font-serif:   'Cormorant Garamond', serif;      /* Citations élégantes */
+
+  --maxw: 1280px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--creme);
+  color:var(--encre);
+  font-family:var(--font-body);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* ---------- Utilitaires ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.section{padding:110px 0;position:relative;}
+
+.eyebrow{
+  font-family:var(--font-accent);font-weight:700;font-size:.75rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--rouge);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:32px;height:2px;background:var(--rouge);}
+
+.title{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(2.6rem,5.5vw,5rem);line-height:.96;
+  text-transform:uppercase;letter-spacing:.02em;color:var(--encre);
+}
+.title .accent{color:var(--rouge);}
+.title.light{color:var(--blanc);}
+
+.lead{
+  font-family:var(--font-body);color:var(--gris);
+  font-size:1.06rem;max-width:580px;margin-top:16px;line-height:1.7;
+}
+
+/* Animations d'apparition au scroll */
+.reveal{opacity:0;transform:translateY(36px);
+  transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+
+/* ============================ NAV ============================ */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;
+  transition:background .35s,backdrop-filter .35s,padding .35s,box-shadow .35s;
+}
+/* nav transparente sur le hero sombre, claire dès qu'on scrolle */
+header.nav.scrolled{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+  box-shadow:0 6px 24px rgba(0,0,0,.07);padding:11px 32px;
+}
+.nav-logo{display:flex;align-items:center;gap:12px;
+  font-family:var(--font-display);font-size:1.35rem;letter-spacing:.04em;color:#fff;}
+header.nav.scrolled .nav-logo{color:var(--encre);}
+.nav-logo img{height:44px;width:auto;filter:drop-shadow(0 0 8px rgba(232,20,27,.55));}
+.nav-logo span .r{color:var(--rouge-vif);}
+header.nav.scrolled .nav-logo span .r{color:var(--rouge);}
+.nav-links{display:flex;gap:34px;}
+.nav-links a{
+  font-family:var(--font-accent);font-weight:600;font-size:.82rem;
+  letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.85);
+  position:relative;padding:6px 0;transition:color .25s;
+}
+header.nav.scrolled .nav-links a{color:var(--gris);}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--rouge);transition:width .3s;
+}
+.nav-links a:hover{color:var(--rouge);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-family:var(--font-accent);font-weight:700;font-size:.8rem;
+  letter-spacing:.07em;text-transform:uppercase;
+  background:var(--rouge);color:#fff;padding:12px 22px;border-radius:3px;
+  transition:transform .2s,box-shadow .2s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(232,20,27,.4);}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:1100;}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s;}
+header.nav.scrolled .burger span{background:var(--encre);}
+
+/* ============================ HERO (SOMBRE) ============================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 62% 52% at 50% 42%,rgba(232,20,27,.22),transparent 70%),
+    linear-gradient(180deg,#000 0%,var(--beton) 58%,#0d0d10 100%);
+}
+/* texture grain uniquement sur le hero */
+.hero::before{
+  content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* Silhouettes de voiture en filigrane */
+.hero-silhouettes{
+  position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;
+}
+.sil{
+  position:absolute;color:var(--rouge-vif);
+}
+
+/* Grande silhouette — bas gauche, dérive lente vers la droite */
+.sil-1{
+  width:520px;bottom:-30px;left:-80px;
+  opacity:.055;
+  animation:driftR 22s ease-in-out infinite alternate;
+}
+/* Silhouette milieu-droite, légèrement inclinée */
+.sil-2{
+  width:280px;top:38%;right:-40px;
+  opacity:.04;
+  transform:rotate(-8deg);
+  animation:driftL 18s ease-in-out infinite alternate;
+  animation-delay:3s;
+}
+/* Toute petite — haut gauche */
+.sil-3{
+  width:160px;top:12%;left:5%;
+  opacity:.035;
+  transform:rotate(6deg);
+  animation:driftR 26s ease-in-out infinite alternate;
+  animation-delay:8s;
+}
+/* Silhouette moyenne — haut droit */
+.sil-4{
+  width:340px;top:5%;right:2%;
+  opacity:.045;
+  transform:rotate(-4deg);
+  animation:driftL 20s ease-in-out infinite alternate;
+  animation-delay:1.5s;
+}
+/* Silhouette bas droit */
+.sil-5{
+  width:220px;bottom:8%;right:6%;
+  opacity:.04;
+  transform:rotate(5deg);
+  animation:driftR 16s ease-in-out infinite alternate;
+  animation-delay:5s;
+}
+
+@keyframes driftR{
+  0%  {transform:translateX(0)   rotate(var(--rot, 0deg));}
+  100%{transform:translateX(28px) rotate(var(--rot, 0deg));}
+}
+@keyframes driftL{
+  0%  {transform:translateX(0)    rotate(var(--rot, 0deg));}
+  100%{transform:translateX(-22px) rotate(var(--rot, 0deg));}
+}
+
+/* Preserve rotations initiales via custom props */
+.sil-2{--rot:-8deg;}
+.sil-3{--rot:6deg;}
+.sil-4{--rot:-4deg;}
+.sil-5{--rot:5deg;}
+
+
+.hero::after{
+  content:"";position:absolute;width:660px;height:660px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,20,27,.30),transparent 65%);
+  filter:blur(44px);animation:pulse 5s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.18);opacity:1;}}
+/* lignes de vitesse */
+.speed-lines{position:absolute;inset:0;opacity:.55;}
+.speed-lines i{
+  position:absolute;height:2px;background:linear-gradient(90deg,transparent,var(--rouge-vif),transparent);
+  animation:slide 7s linear infinite;
+}
+.speed-lines i:nth-child(1){top:24%;width:240px;left:-240px;animation-delay:0s;}
+.speed-lines i:nth-child(2){top:66%;width:340px;left:-340px;animation-delay:1.7s;}
+.speed-lines i:nth-child(3){top:82%;width:180px;left:-180px;animation-delay:3.5s;}
+@keyframes slide{to{left:110%;}}
+
+.hero-content{position:relative;z-index:2;padding:0 24px;}
+.hero-logo{
+  height:120px;width:auto;margin:0 auto 22px;
+  filter:drop-shadow(0 0 28px rgba(232,20,27,.7));
+  animation:floaty 4s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.hero h1{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(3.4rem,12vw,9rem);line-height:.86;
+  text-transform:uppercase;letter-spacing:.02em;color:#fff;
+}
+.hero h1 .line2{color:var(--rouge-vif);text-shadow:0 0 42px rgba(232,20,27,.65);}
+.hero-tag{
+  font-family:var(--font-accent);font-weight:600;
+  font-size:clamp(.85rem,2vw,1.12rem);letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.82);margin:22px 0 8px;
+}
+.hero-sub{font-family:var(--font-body);color:rgba(255,255,255,.55);
+  max-width:520px;margin:0 auto 34px;}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+.btn{
+  font-family:var(--font-accent);font-weight:700;font-size:.85rem;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding:17px 32px;border-radius:3px;cursor:pointer;border:none;
+  transition:transform .2s,box-shadow .2s,background .25s,color .25s,border-color .25s;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.btn-primary{background:var(--rouge);color:#fff;box-shadow:0 0 30px rgba(232,20,27,.35);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,20,27,.5);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-ghost:hover{border-color:var(--rouge-vif);color:var(--rouge-vif);transform:translateY(-3px);}
+.btn-dark{background:var(--encre);color:#fff;}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.25);}
+
+.scroll-hint{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  font-family:var(--font-accent);font-size:.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;
+  flex-direction:column;align-items:center;gap:8px;z-index:2;
+}
+.scroll-hint .mouse{
+  width:24px;height:38px;border:2px solid rgba(255,255,255,.5);border-radius:14px;position:relative;
+}
+.scroll-hint .mouse::before{
+  content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;
+  background:var(--rouge-vif);border-radius:2px;transform:translateX(-50%);
+  animation:wheel 1.6s infinite;
+}
+@keyframes wheel{0%{opacity:1;top:7px;}100%{opacity:0;top:18px;}}
+
+/* ============================ BANDEAU DÉFILANT ============================ */
+.marquee{
+  background:var(--rouge);overflow:hidden;padding:14px 0;
+}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;animation:marq 28s linear infinite;}
+.marquee-track span{
+  font-family:var(--font-display);font-size:1.25rem;letter-spacing:.06em;
+  text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:48px;
+}
+.marquee-track span::after{content:"●";color:#0a0a0c;font-size:.6rem;}
+@keyframes marq{to{transform:translateX(-50%);}}
+
+/* ============================ SERVICES (CLAIR) ============================ */
+#services{background:var(--creme);}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:0;margin-top:54px;
+  border:1px solid var(--gris-line);border-radius:16px;overflow:hidden;
+}
+
+/* Grille 2x2 sur desktop */
+@media(min-width:660px){
+  .services-grid{grid-template-columns:1fr 1fr;}
+}
+
+.service-card{
+  background:var(--blanc);
+  padding:44px 36px 38px;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--gris-line);
+  border-right:1px solid var(--gris-line);
+  transition:background .35s;
+  cursor:pointer;
+}
+
+/* ====================== MODAL SERVICE ====================== */
+.modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(10,10,12,.88);backdrop-filter:blur(10px);
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .38s cubic-bezier(.2,.7,.2,1);
+}
+@media(min-width:660px){
+  .modal-overlay{align-items:center;}
+}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+
+.modal-box{
+  background:var(--blanc);
+  width:100%;max-width:680px;
+  border-radius:20px 20px 0 0;
+  max-height:92vh;overflow-y:auto;
+  transform:translateY(60px);
+  transition:transform .42s cubic-bezier(.2,.7,.2,1);
+  position:relative;
+}
+@media(min-width:660px){
+  .modal-box{border-radius:20px;transform:scale(.92) translateY(30px);}
+}
+.modal-overlay.open .modal-box{transform:none;}
+@media(min-width:660px){
+  .modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
+}
+
+/* Barre de tiret en haut sur mobile */
+.modal-drag{
+  width:44px;height:4px;background:var(--gris-line);
+  border-radius:2px;margin:14px auto 0;
+}
+@media(min-width:660px){.modal-drag{display:none;}}
+
+/* Galerie photos dans la modal */
+.modal-gallery{
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;
+  height:220px;overflow:hidden;
+  border-radius:0;
+}
+@media(min-width:660px){
+  .modal-gallery{height:280px;border-radius:12px 12px 0 0;}
+}
+.modal-gallery img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s;
+}
+.modal-gallery img:first-child{
+  grid-row:1/3;grid-column:1;
+}
+.modal-gallery img:hover{transform:scale(1.04);}
+
+/* Pastille overlay si pas de photos */
+.modal-gallery-ph{
+  background:var(--encre);display:flex;align-items:center;
+  justify-content:center;font-size:3.5rem;grid-row:1/3;
+}
+
+.modal-body{padding:28px 28px 36px;}
+@media(min-width:660px){.modal-body{padding:32px 36px 40px;}}
+
+.modal-close{
+  position:absolute;top:16px;right:16px;z-index:10;
+  width:38px;height:38px;border-radius:50%;border:none;
+  background:rgba(22,22,26,.6);color:#fff;font-size:1.1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(6px);transition:background .2s,transform .2s;
+}
+.modal-close:hover{background:var(--rouge);transform:scale(1.1);}
+
+.modal-eyebrow{
+  font-family:var(--font-accent);font-weight:700;font-size:.72rem;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--rouge);
+  display:flex;align-items:center;gap:8px;margin-bottom:10px;
+}
+.modal-eyebrow::before{content:"";width:24px;height:2px;background:var(--rouge);}
+
+.modal-title{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2rem,6vw,2.8rem);letter-spacing:.03em;
+  text-transform:uppercase;color:var(--encre);margin-bottom:14px;line-height:1;
+}
+
+.modal-desc{
+  font-family:var(--font-body);color:var(--gris);
+  font-size:.97rem;line-height:1.75;margin-bottom:22px;
+}
+
+/* Grille de tarifs */
+.modal-tarifs{
+  background:var(--creme);border-radius:12px;padding:20px;
+  margin-bottom:24px;
+}
+.modal-tarifs h4{
+  font-family:var(--font-accent);font-weight:700;font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gris);
+  margin-bottom:14px;
+}
+.tarif-list{display:flex;flex-direction:column;gap:10px;}
+.tarif-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:10px;border-bottom:1px solid var(--gris-line);
+}
+.tarif-row:last-child{border-bottom:none;padding-bottom:0;}
+.tarif-label{font-family:var(--font-body);font-size:.95rem;color:var(--encre);}
+.tarif-label small{display:block;color:var(--gris);font-size:.8rem;}
+.tarif-prix{
+  font-family:var(--font-display);font-weight:800;font-size:1.4rem;
+  letter-spacing:.02em;color:var(--rouge);white-space:nowrap;
+}
+.tarif-prix small{font-size:.7rem;font-weight:400;color:var(--gris);}
+
+/* Note "sur devis" */
+.modal-note{
+  font-size:.8rem;color:var(--gris);margin-top:-14px;margin-bottom:20px;
+  font-style:italic;
+}
+
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.modal-actions .btn{flex:1;justify-content:center;min-width:140px;}
+
+
+/* Supprimer bordures en excès sur la grille */
+.service-card:nth-child(2n){border-right:none;}
+.service-card:nth-last-child(-n+2){border-bottom:none;}
+@media(max-width:659px){
+  .service-card{border-right:none;}
+  .service-card:last-child{border-bottom:none;}
+  .service-card:nth-last-child(-n+2){border-bottom:1px solid var(--gris-line);}
+  .service-card:last-child{border-bottom:none;}
+}
+
+/* Numéro géant en fond */
+.service-num{
+  font-family:var(--font-display);font-size:7rem;line-height:1;
+  color:var(--encre);opacity:.04;
+  position:absolute;bottom:-10px;right:18px;
+  transition:opacity .35s,transform .35s;
+}
+.service-card:hover .service-num{opacity:.08;transform:scale(1.08) translateY(-4px);}
+
+/* Ligne rouge décorative à gauche */
+.service-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:var(--rouge);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.service-card:hover::before{transform:scaleY(1);}
+.service-card:hover{background:#fafaf8;}
+
+/* Icône : cercle avec contour rouge */
+.service-icon{
+  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:1.5rem;
+  border:2px solid var(--gris-line);margin-bottom:22px;
+  transition:border-color .3s,transform .3s;background:var(--blanc);
+}
+.service-card:hover .service-icon{border-color:var(--rouge);transform:rotate(-8deg);}
+
+.service-card h3{
+  font-family:var(--font-display);font-weight:400;font-size:1.9rem;
+  letter-spacing:.04em;margin-bottom:10px;color:var(--encre);
+  line-height:1.05;
+}
+.service-card p{
+  color:var(--gris);font-size:.92rem;line-height:1.7;
+  font-family:var(--font-body);
+}
+
+/* Tag "SERVICE MOBILE" discret */
+.service-tag{
+  display:inline-block;margin-top:18px;
+  font-family:var(--font-accent);font-size:.68rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rouge);border:1px solid rgba(232,20,27,.3);
+  padding:5px 11px;border-radius:20px;
+}
+
+/* ============================ AVANT / APRÈS (CLAIR) ============================ */
+#avant-apres{background:var(--gris-bg);}
+.ba-wrap{margin-top:54px;}
+.ba-slider{
+  position:relative;max-width:920px;margin:0 auto;border-radius:12px;
+  overflow:hidden;user-select:none;aspect-ratio:4/3;cursor:ew-resize;
+  box-shadow:0 28px 60px rgba(0,0,0,.16);
+}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ba-after{clip-path:inset(0 0 0 50%);}
+.ba-label{
+  position:absolute;top:16px;font-family:var(--font-accent);font-weight:700;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 15px;border-radius:3px;backdrop-filter:blur(4px);
+}
+.ba-label.before{left:16px;background:rgba(0,0,0,.62);color:#fff;}
+.ba-label.after{right:16px;background:var(--rouge);color:#fff;}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;
+  transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.1);
+}
+.ba-handle::after{
+  content:"⟺";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;background:var(--rouge);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  font-size:1.15rem;box-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+.ba-dots{display:flex;gap:10px;justify-content:center;margin-top:24px;}
+.ba-dot{
+  width:40px;height:4px;background:var(--gris-line);border:none;
+  cursor:pointer;transition:background .3s;border-radius:2px;
+}
+.ba-dot.active{background:var(--rouge);}
+
+/* ============================ CARROUSEL GALERIE (CLAIR) ============================ */
+#galerie{background:var(--creme);}
+.carousel{margin-top:54px;position:relative;}
+.carousel-viewport{overflow:hidden;border-radius:12px;
+  box-shadow:0 24px 56px rgba(0,0,0,.14);}
+.carousel-track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.carousel-slide{min-width:100%;position:relative;aspect-ratio:16/10;background:#222;}
+.carousel-slide img,.carousel-slide video{width:100%;height:100%;object-fit:cover;}
+.carousel-slide .cap{
+  position:absolute;left:0;right:0;bottom:0;padding:46px 30px 24px;
+  background:linear-gradient(transparent,rgba(0,0,0,.88));
+  font-family:var(--font-accent);font-weight:700;font-size:1rem;
+  letter-spacing:.04em;text-transform:uppercase;color:#fff;
+}
+.carousel-slide .cap small{
+  display:block;font-family:var(--font-body);font-weight:400;
+  text-transform:none;letter-spacing:0;color:rgba(255,255,255,.72);font-size:.85rem;
+}
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.92);color:var(--encre);font-size:1.4rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.18);transition:background .25s,color .25s,transform .2s;
+}
+.carousel-btn:hover{background:var(--rouge);color:#fff;}
+.carousel-btn.prev{left:18px;}
+.carousel-btn.next{right:18px;}
+.carousel-dots{display:flex;gap:9px;justify-content:center;margin-top:22px;}
+.c-dot{
+  width:11px;height:11px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--gris-line);transition:background .3s,transform .3s;
+}
+.c-dot.active{background:var(--rouge);transform:scale(1.3);}
+
+/* ============================ STATS (SOMBRE - rappel du hero) ============================ */
+.stats-section{
+  background:
+    radial-gradient(ellipse 50% 70% at 80% 20%,rgba(232,20,27,.16),transparent 70%),
+    var(--noir);
+  padding:74px 0;
+}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:30px;}
+.stat{text-align:center;padding:18px;}
+.stat .num{
+  font-family:var(--font-display);font-size:clamp(2.6rem,6vw,4rem);
+  color:#fff;line-height:1;
+}
+.stat .num .u{color:var(--rouge-vif);}
+.stat .lbl{
+  font-family:var(--font-accent);font-weight:600;font-size:.76rem;
+  letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:8px;
+}
+
+/* ============================ PROCESSUS (CLAIR) ============================ */
+#processus{background:var(--gris-bg);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:54px;}
+.step{position:relative;padding-top:26px;}
+.step-num{
+  font-family:var(--font-display);font-size:4.4rem;line-height:1;color:var(--rouge);
+}
+.step h4{
+  font-family:var(--font-accent);font-weight:800;font-size:1.08rem;
+  text-transform:uppercase;letter-spacing:.04em;margin:6px 0 8px;color:var(--encre);
+}
+.step p{color:var(--gris);font-size:.92rem;}
+.step::after{
+  content:"";position:absolute;top:42px;right:-14px;width:28px;height:2px;
+  background:repeating-linear-gradient(90deg,var(--rouge) 0 6px,transparent 6px 12px);
+}
+.step:last-child::after{display:none;}
+
+/* ============================ AVIS (CLAIR) ============================ */
+#avis{background:var(--creme);}
+.reviews{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:22px;margin-top:54px;
+}
+.review{
+  background:var(--encre);color:#fff;
+  border-radius:14px;padding:36px 30px 30px;
+  position:relative;overflow:hidden;
+  transition:transform .32s,box-shadow .32s;
+}
+.review:hover{transform:translateY(-7px);box-shadow:0 28px 50px rgba(0,0,0,.22);}
+
+/* Guillemet décoratif en police serif italique */
+.review .quote-mark{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:6rem;line-height:.8;color:var(--rouge);
+  position:absolute;top:14px;right:22px;opacity:.35;
+  pointer-events:none;
+}
+.review .stars{
+  font-size:.82rem;letter-spacing:4px;margin-bottom:20px;
+  color:var(--rouge);display:flex;align-items:center;gap:2px;
+}
+.review .stars span{display:inline-block;transition:transform .2s;}
+.review:hover .stars span{animation:starPop .4s ease forwards;}
+.review:hover .stars span:nth-child(2){animation-delay:.05s;}
+.review:hover .stars span:nth-child(3){animation-delay:.1s;}
+.review:hover .stars span:nth-child(4){animation-delay:.15s;}
+.review:hover .stars span:nth-child(5){animation-delay:.2s;}
+@keyframes starPop{0%{transform:scale(1);}50%{transform:scale(1.35);}100%{transform:scale(1);}}
+
+.review p{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:1.05rem;line-height:1.72;color:rgba(255,255,255,.82);
+}
+.review-sep{
+  width:32px;height:2px;background:var(--rouge);
+  margin:20px 0 16px;
+}
+.review .who{
+  font-family:var(--font-accent);font-weight:700;
+  font-size:.9rem;letter-spacing:.04em;color:#fff;
+}
+.review .who small{
+  display:block;font-weight:400;color:rgba(255,255,255,.45);
+  font-family:var(--font-body);letter-spacing:0;margin-top:2px;font-size:.82rem;
+}
+
+/* Variante : carte centrale légèrement différente */
+.review:nth-child(2){
+  background:var(--rouge);
+}
+.review:nth-child(2) .quote-mark{color:#fff;opacity:.2;}
+.review:nth-child(2) p{color:rgba(255,255,255,.9);}
+.review:nth-child(2) .stars{color:#fff;}
+.review:nth-child(2) .review-sep{background:#fff;}
+.review:nth-child(2) .who small{color:rgba(255,255,255,.6);}
+
+/* ============================ CONTACT (SOMBRE - écho du hero) ============================ */
+.contact{
+  background:
+    radial-gradient(ellipse 50% 60% at 78% 28%,rgba(232,20,27,.15),transparent 70%),
+    var(--noir);
+}
+.contact .title{color:#fff;}
+.contact .lead{color:rgba(255,255,255,.55);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;margin-top:48px;}
+.contact-info .ci-item{display:flex;gap:15px;margin-bottom:24px;align-items:flex-start;}
+.contact-info .ci-ico{
+  width:46px;height:46px;flex-shrink:0;border-radius:8px;
+  background:rgba(232,20,27,.16);display:flex;align-items:center;
+  justify-content:center;font-size:1.2rem;
+}
+.contact-info .ci-item h5{
+  font-family:var(--font-accent);font-weight:700;font-size:.78rem;
+  letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:3px;
+}
+.contact-info .ci-item p{color:#fff;font-weight:600;}
+.contact-info .ci-item a{color:#fff;font-weight:600;transition:color .2s;}
+.contact-info .ci-item a:hover{color:var(--rouge-vif);}
+
+.form-card{
+  background:var(--blanc);border-radius:12px;padding:36px 34px;
+  box-shadow:0 24px 60px rgba(0,0,0,.4);
+}
+.form-card h3{
+  font-family:var(--font-accent);font-weight:800;font-size:1.15rem;
+  text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;color:var(--encre);
+}
+.form-card .sub{color:var(--gris);font-size:.9rem;margin-bottom:22px;}
+.form{display:flex;flex-direction:column;gap:14px;}
+.form label{
+  font-family:var(--font-accent);font-weight:600;font-size:.7rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin-bottom:-7px;
+}
+.form input,.form select,.form textarea{
+  font-family:var(--font-body);font-size:.95rem;
+  background:var(--creme);border:1px solid var(--gris-line);
+  color:var(--encre);padding:14px 15px;border-radius:6px;
+  transition:border-color .25s,background .25s;
+}
+.form input:focus,.form select:focus,.form textarea:focus{
+  outline:none;border-color:var(--rouge);background:#fff;
+}
+.form textarea{resize:vertical;min-height:104px;}
+.form-note{font-size:.8rem;color:var(--gris);margin-top:2px;}
+
+/* ============================ FOOTER ============================ */
+footer{background:#060607;padding:54px 0 30px;}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:28px;padding-bottom:32px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-logo{display:flex;align-items:center;gap:12px;
+  font-family:var(--font-display);font-size:1.45rem;color:#fff;}
+.footer-logo img{height:50px;filter:drop-shadow(0 0 8px rgba(232,20,27,.5));}
+.footer-logo .r{color:var(--rouge-vif);}
+.footer-cols{display:flex;gap:14px;}
+.footer-social a{
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.14);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;
+  transition:background .25s,border-color .25s,transform .2s;
+}
+.footer-social{display:flex;gap:12px;}
+.footer-social a:hover{background:var(--rouge);border-color:var(--rouge);transform:translateY(-3px);}
+.footer-bottom{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  padding-top:22px;font-size:.82rem;color:rgba(255,255,255,.4);
+}
+.footer-bottom a:hover{color:var(--rouge-vif);}
+
+/* ============================ WHATSAPP FLOTTANT ============================ */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:900;
+  width:60px;height:60px;border-radius:50%;background:#25d366;
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;color:#fff;
+  box-shadow:0 8px 26px rgba(0,0,0,.3);transition:transform .25s;
+  animation:waPulse 2.4s infinite;
+}
+.wa-float:hover{transform:scale(1.12);}
+@keyframes waPulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+/* ============================ RESPONSIVE ============================ */
+@media(max-width:880px){
+  .nav-links,.nav-cta{
+    position:fixed;flex-direction:column;top:0;right:-100%;height:100vh;
+    width:76%;background:#fff;padding:118px 38px;gap:26px;
+    transition:right .4s cubic-bezier(.2,.7,.2,1);
+    box-shadow:-20px 0 50px rgba(0,0,0,.15);
+  }
+  .nav-links{display:flex;}
+  .nav-links a{color:var(--encre);}
+  .nav-cta{top:auto;bottom:54px;right:-100%;width:76%;text-align:center;}
+  header.nav.open .nav-links{right:0;}
+  header.nav.open .nav-cta{right:0;}
+  .burger{display:flex;}
+  header.nav.open .burger span{background:var(--encre);}
+  header.nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  header.nav.open .burger span:nth-child(2){opacity:0;}
+  header.nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .contact-grid{grid-template-columns:1fr;gap:38px;}
+  .step::after{display:none;}
+  .section{padding:78px 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================= NAVIGATION ======================= -->
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="assets/images/logo.png" alt="Logo URHUS AUTO">
+    <span><span class="r">URHUS</span> AUTO</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#avant-apres">Avant / Après</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#processus">Processus</a>
+    <a href="#avis">Avis</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Devis gratuit</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<!-- ======================= HERO (SOMBRE) ======================= -->
+<section class="hero" id="hero">
+  <div class="speed-lines"><i></i><i></i><i></i></div>
+
+  <!-- Silhouettes de voiture en filigrane -->
+  <div class="hero-silhouettes" aria-hidden="true">
+
+    <!-- Grande silhouette bas gauche -->
+    <svg class="sil sil-1" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 118 Q50 64 138 52 L242 48 Q318 48 368 90 L394 106 Q406 112 402 126 L370 130 L58 132 Q30 130 28 118Z"/>
+        <path d="M148 54 L172 92 M185 52 L208 92 M220 50 L244 92"/>
+        <ellipse cx="100" cy="144" rx="22" ry="22"/>
+        <ellipse cx="328" cy="144" rx="22" ry="22"/>
+        <path d="M78 112 L166 110 M252 106 L350 104" stroke-width="2.5"/>
+        <path d="M2 130 L28 118 M402 126 L418 130"/>
+      </g>
+    </svg>
+
+    <!-- Silhouette milieu droite, plus petite -->
+    <svg class="sil sil-2" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 118 Q50 64 138 52 L242 48 Q318 48 368 90 L394 106 Q406 112 402 126 L370 130 L58 132 Q30 130 28 118Z"/>
+        <path d="M148 54 L172 92 M185 52 L208 92 M220 50 L244 92"/>
+        <ellipse cx="100" cy="144" rx="22" ry="22"/>
+        <ellipse cx="328" cy="144" rx="22" ry="22"/>
+        <path d="M78 112 L166 110 M252 106 L350 104" stroke-width="2.5"/>
+        <path d="M2 130 L28 118 M402 126 L418 130"/>
+      </g>
+    </svg>
+
+    <!-- Toute petite silhouette haut gauche -->
+    <svg class="sil sil-3" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 118 Q50 64 138 52 L242 48 Q318 48 368 90 L394 106 Q406 112 402 126 L370 130 L58 132 Q30 130 28 118Z"/>
+        <path d="M148 54 L172 92 M185 52 L208 92 M220 50 L244 92"/>
+        <ellipse cx="100" cy="144" rx="22" ry="22"/>
+        <ellipse cx="328" cy="144" rx="22" ry="22"/>
+        <path d="M78 112 L166 110 M252 106 L350 104" stroke-width="2.5"/>
+      </g>
+    </svg>
+
+    <!-- Silhouette moyenne haut droit -->
+    <svg class="sil sil-4" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 118 Q50 64 138 52 L242 48 Q318 48 368 90 L394 106 Q406 112 402 126 L370 130 L58 132 Q30 130 28 118Z"/>
+        <path d="M148 54 L172 92 M185 52 L208 92 M220 50 L244 92"/>
+        <ellipse cx="100" cy="144" rx="22" ry="22"/>
+        <ellipse cx="328" cy="144" rx="22" ry="22"/>
+        <path d="M78 112 L166 110 M252 106 L350 104" stroke-width="2.5"/>
+        <path d="M2 130 L28 118 M402 126 L418 130"/>
+      </g>
+    </svg>
+
+    <!-- Silhouette bas droit -->
+    <svg class="sil sil-5" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 118 Q50 64 138 52 L242 48 Q318 48 368 90 L394 106 Q406 112 402 126 L370 130 L58 132 Q30 130 28 118Z"/>
+        <path d="M148 54 L172 92 M185 52 L208 92 M220 50 L244 92"/>
+        <ellipse cx="100" cy="144" rx="22" ry="22"/>
+        <ellipse cx="328" cy="144" rx="22" ry="22"/>
+      </g>
+    </svg>
+
+  </div>
+
+  <div class="hero-content">
+    <img src="assets/images/logo.png" alt="URHUS AUTO" class="hero-logo">
+    <h1><span class="line1">URHUS</span><br><span class="line2">AUTO</span></h1>
+    <p class="hero-tag">Nettoyage Automobile · 100% Mobile</p>
+    <p class="hero-sub">On se déplace chez vous. Particuliers &amp; professionnels.
+       Véhicules, matelas, canapés et tapis remis à neuf — sans que vous bougiez.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Réserver un nettoyage →</a>
+      <a href="#avant-apres" class="btn btn-ghost">Voir les rendus</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Défiler</span>
+    <div class="mouse"></div>
+  </div>
+</section>
+
+<!-- ======================= BANDEAU DÉFILANT ======================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Intérieur impeccable<span></span></span>
+    <span>Service à domicile<span></span></span>
+    <span>Canapés &amp; matelas<span></span></span>
+    <span>Particuliers &amp; pros<span></span></span>
+    <span>Devis gratuit<span></span></span>
+    <span>Intérieur impeccable<span></span></span>
+    <span>Service à domicile<span></span></span>
+    <span>Canapés &amp; matelas<span></span></span>
+    <span>Particuliers &amp; pros<span></span></span>
+    <span>Devis gratuit<span></span></span>
+  </div>
+</div>
+
+<!-- ======================= SERVICES ======================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Nos prestations</span>
+      <h2 class="title">Ce que nous <span class="accent">nettoyons</span></h2>
+      <p class="lead">Un nettoyage en profondeur, professionnel, directement là où vous êtes.
+         Nous apportons tout le matériel.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal" data-service="auto">
+        <span class="service-num">01</span>
+        <div class="service-icon">🚗</div>
+        <h3>Nettoyage Auto</h3>
+        <p>Intérieur et extérieur complet : sièges, moquettes, plastiques, vitres, carrosserie. Votre véhicule retrouve son éclat du premier jour.</p>
+        <span class="service-tag">Intérieur & Extérieur ↗</span>
+      </article>
+      <article class="service-card reveal" data-service="canape">
+        <span class="service-num">02</span>
+        <div class="service-icon">🛋️</div>
+        <h3>Canapés</h3>
+        <p>Détachage et shampooinage en profondeur de vos canapés en tissu. On élimine taches, odeurs et acariens.</p>
+        <span class="service-tag">Tissu & Velours ↗</span>
+      </article>
+      <article class="service-card reveal" data-service="matelas">
+        <span class="service-num">03</span>
+        <div class="service-icon">🛏️</div>
+        <h3>Matelas</h3>
+        <p>Nettoyage et désinfection de matelas pour un couchage sain. Idéal avant l'arrivée d'un enfant ou après un déménagement.</p>
+        <span class="service-tag">Désinfection incluse ↗</span>
+      </article>
+      <article class="service-card reveal" data-service="tapis">
+        <span class="service-num">04</span>
+        <div class="service-icon">🧶</div>
+        <h3>Tapis & Moquettes</h3>
+        <p>Redonnez vie à vos tapis et moquettes : couleurs ravivées, fibres assainies, séchage rapide.</p>
+        <span class="service-tag">Séchage rapide ↗</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AVANT / APRÈS ======================= -->
+<section class="section" id="avant-apres">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Le résultat parle</span>
+      <h2 class="title">Avant <span class="accent">/</span> Après</h2>
+      <p class="lead">Glissez le curseur pour découvrir la transformation.
+         Des rendus réels, sur des véhicules de nos clients.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba-slider" id="baSlider">
+        <img class="ba-before" id="baBefore" src="assets/images/avant-1.jpg"
+             alt="Intérieur de véhicule avant nettoyage URHUS AUTO">
+        <img class="ba-after" id="baAfter" src="assets/images/apres-1.jpg"
+             alt="Intérieur de véhicule après nettoyage URHUS AUTO">
+        <span class="ba-label before">Avant</span>
+        <span class="ba-label after">Après</span>
+        <div class="ba-handle" id="baHandle"></div>
+      </div>
+      <div class="ba-dots" id="baDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CARROUSEL GALERIE ======================= -->
+<section class="section" id="galerie">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">En images &amp; en vidéo</span>
+      <h2 class="title">Notre <span class="accent">galerie</span></h2>
+      <p class="lead">Photos et vidéos de nos interventions. La meilleure preuve, c'est le rendu.</p>
+    </div>
+    <div class="carousel reveal" id="carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- SLIDE VIDÉO -->
+          <div class="carousel-slide">
+            <video id="galVideo" muted loop playsinline poster="assets/images/galerie-1.jpg">
+              <source src="assets/video/rendu-1.mp4" type="video/mp4">
+            </video>
+            <div class="cap">Nettoyage intérieur en vidéo
+              <small>Détailing complet — du sale au sans-faute</small></div>
+          </div>
+
+          <!-- SLIDES PHOTOS -->
+          <div class="carousel-slide">
+            <img src="assets/images/galerie-2.jpg" alt="Sièges avant nettoyés URHUS AUTO">
+            <div class="cap">Sièges avant<small>Tissu et cuir traités en profondeur</small></div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/galerie-3.jpg" alt="Banquette arrière nettoyée URHUS AUTO">
+            <div class="cap">Banquette arrière<small>Moquettes et plastiques comme neufs</small></div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/galerie-4.jpg" alt="Habitacle nettoyé URHUS AUTO">
+            <div class="cap">Habitacle complet<small>Poussière et taches éliminées</small></div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="cPrev" aria-label="Précédent">‹</button>
+      <button class="carousel-btn next" id="cNext" aria-label="Suivant">›</button>
+      <div class="carousel-dots" id="cDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STATS (SOMBRE) ======================= -->
+<section class="stats-section">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-count="500"><span class="u">+</span>0</div><div class="lbl">Véhicules nettoyés</div></div>
+      <div class="stat"><div class="num" data-count="100">0<span class="u">%</span></div><div class="lbl">Service mobile</div></div>
+      <div class="stat"><div class="num" data-count="4.9">0<span class="u">★</span></div><div class="lbl">Note moyenne</div></div>
+      <div class="stat"><div class="num" data-count="24"><span class="u">+</span>0</div><div class="lbl">Pros partenaires</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROCESSUS ======================= -->
+<section class="section" id="processus">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Simple &amp; rapide</span>
+      <h2 class="title">Comment ça <span class="accent">marche</span></h2>
+      <p class="lead">Quatre étapes, zéro contrainte. Vous réservez, on s'occupe du reste.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><h4>Vous réservez</h4>
+        <p>Par téléphone, WhatsApp ou via le formulaire. Dites-nous votre besoin.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h4>On se déplace</h4>
+        <p>On vient chez vous ou sur votre lieu de travail, avec tout le matériel.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h4>On nettoie</h4>
+        <p>Nettoyage en profondeur, soigné, par des professionnels équipés.</p></div>
+      <div class="step reveal"><div class="step-num">4</div><h4>Vous profitez</h4>
+        <p>Vous récupérez un véhicule (ou un canapé) impeccable. Sans avoir bougé.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AVIS ======================= -->
+<section class="section" id="avis">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Ils nous font confiance</span>
+      <h2 class="title">Avis <span class="accent">clients</span></h2>
+    </div>
+    <div class="reviews">
+      <div class="review reveal">
+        <span class="quote-mark">"</span>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Travail impeccable, ils sont venus jusqu'à mon parking. Ma voiture est comme neuve à l'intérieur. Je recommande à 100%.</p>
+        <div class="review-sep"></div>
+        <div class="who">Sandra M.<small>Particulier</small></div>
+      </div>
+      <div class="review reveal">
+        <span class="quote-mark">"</span>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>On fait nettoyer la flotte de l'entreprise par URHUS AUTO. Ponctuels, sérieux, et le rendu est top à chaque fois.</p>
+        <div class="review-sep"></div>
+        <div class="who">Karim B.<small>Gérant — société de VTC</small></div>
+      </div>
+      <div class="review reveal">
+        <span class="quote-mark">"</span>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>J'ai fait nettoyer mon canapé en tissu, des taches que je pensais définitives ont disparu. Bluffant.</p>
+        <div class="review-sep"></div>
+        <div class="who">Élodie R.<small>Particulier</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT (SOMBRE) ======================= -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Parlons-en</span>
+      <h2 class="title">Demandez votre <span class="accent">devis</span></h2>
+      <p class="lead">Réponse rapide. Devis gratuit et sans engagement.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-item">
+          <div class="ci-ico">📞</div>
+          <div><h5>Téléphone / WhatsApp</h5>
+            <p><a href="tel:+33635540220">+33 6 35 54 02 20</a></p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">✉️</div>
+          <div><h5>E-mail</h5>
+            <p><a href="mailto:urhusauto@gmail.com">urhusauto@gmail.com</a></p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">📍</div>
+          <div><h5>Zone géographique desservie</h5>
+            <p>Île-de-France &amp; alentours — déplacement inclus</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">📷</div>
+          <div><h5>Réseaux sociaux</h5>
+            <p><a href="#" target="_blank">@urhusauto</a> — Instagram · TikTok · Facebook</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🕗</div>
+          <div><h5>Horaires</h5>
+            <p>Lun – Sam · 08h00 – 19h00</p></div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <h3>Formulaire de réservation</h3>
+        <p class="sub">Remplissez ce formulaire, nous revenons vers vous très vite.</p>
+        <form class="form" id="devisForm" name="devis" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="devis">
+          <input type="hidden" name="bot-field" style="display:none">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <label>Téléphone</label>
+          <input type="tel" name="tel" placeholder="Votre numéro" required>
+          <label>Type de client</label>
+          <select name="type" required>
+            <option value="">Sélectionnez…</option>
+            <option>Particulier</option>
+            <option>Professionnel</option>
+          </select>
+          <label>Prestation souhaitée</label>
+          <select name="prestation" required>
+            <option value="">Sélectionnez…</option>
+            <option>Nettoyage automobile</option>
+            <option>Nettoyage de canapé</option>
+            <option>Nettoyage de matelas</option>
+            <option>Nettoyage de tapis / moquette</option>
+            <option>Plusieurs prestations</option>
+          </select>
+          <label>Votre message</label>
+          <textarea name="message" placeholder="Décrivez votre besoin, le véhicule, le lieu…"></textarea>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;">Envoyer ma demande →</button>
+          <p class="form-note" id="formNote">Vos informations restent confidentielles.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="assets/images/logo.png" alt="URHUS AUTO">
+        <span><span class="r">URHUS</span> AUTO</span>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="https://wa.me/33635540220" aria-label="WhatsApp">✆</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 URHUS AUTO — Nettoyage automobile 100% mobile. Tous droits réservés.</span>
+      <span><a href="#services">Services</a> · <a href="#contact">Contact</a> · Mentions légales</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Bouton WhatsApp flottant -->
+<a href="https://wa.me/33635540220" class="wa-float" target="_blank" aria-label="Contacter sur WhatsApp">✆</a>
+
+<script>
+/* ====================================================================
+   URHUS AUTO — Scripts d'interactivité
+   ==================================================================== */
+
+/* ---------- 1. Navigation : fond clair au scroll + menu mobile ---------- */
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+window.addEventListener('scroll', ()=> nav.classList.toggle('scrolled', window.scrollY > 40));
+burger.addEventListener('click', ()=> nav.classList.toggle('open'));
+document.querySelectorAll('#navLinks a, .nav-cta').forEach(a=>{
+  a.addEventListener('click', ()=> nav.classList.remove('open'));
+});
+
+/* ---------- 2. Apparition au scroll (reveal) ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=> e.target.classList.add('in'), i*80);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+/* ---------- 3. Slider Avant / Après ---------- */
+/* Pour ajouter des paires : ajoute des objets {before, after} ci-dessous */
+const baPairs = [
+  {before:'assets/images/avant-1.jpg', after:'assets/images/apres-1.jpg'},
+  {before:'assets/images/avant-2.jpg', after:'assets/images/apres-2.jpg'},
+  {before:'assets/images/avant-3.jpg', after:'assets/images/apres-3.jpg'}
+];
+const baSlider = document.getElementById('baSlider');
+const baHandle = document.getElementById('baHandle');
+const baBefore = document.getElementById('baBefore');
+const baAfter  = document.getElementById('baAfter');
+const baDots   = document.getElementById('baDots');
+let baIndex = 0, baDragging = false;
+
+const phBefore = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%' height='100%' fill='%232a2a2e'/><text x='50%' y='50%' fill='%23e8141b' font-family='sans-serif' font-size='38' font-weight='bold' text-anchor='middle'>PHOTO AVANT</text></svg>";
+const phAfter  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%' height='100%' fill='%23dddbd5'/><text x='50%' y='50%' fill='%2316161a' font-family='sans-serif' font-size='38' font-weight='bold' text-anchor='middle'>PHOTO APRÈS</text></svg>";
+
+function loadBA(i){
+  baIndex = i;
+  baBefore.onerror = ()=>{ baBefore.onerror=null; baBefore.src = phBefore; };
+  baAfter.onerror  = ()=>{ baAfter.onerror=null;  baAfter.src  = phAfter;  };
+  baBefore.src = baPairs[i].before;
+  baAfter.src  = baPairs[i].after;
+  setBA(50);
+  [...baDots.children].forEach((d,j)=> d.classList.toggle('active', j===i));
+}
+function setBA(pct){
+  pct = Math.max(0, Math.min(100, pct));
+  baAfter.style.clipPath = `inset(0 0 0 ${pct}%)`;
+  baHandle.style.left = pct + '%';
+}
+function moveBA(e){
+  if(!baDragging) return;
+  const r = baSlider.getBoundingClientRect();
+  const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+  setBA(x / r.width * 100);
+}
+baSlider.addEventListener('mousedown', ()=> baDragging=true);
+baSlider.addEventListener('touchstart', ()=> baDragging=true);
+window.addEventListener('mouseup', ()=> baDragging=false);
+window.addEventListener('touchend', ()=> baDragging=false);
+window.addEventListener('mousemove', moveBA);
+window.addEventListener('touchmove', moveBA);
+baSlider.addEventListener('click',(e)=>{
+  const r = baSlider.getBoundingClientRect();
+  setBA((e.clientX - r.left)/r.width*100);
+});
+baPairs.forEach((_,i)=>{
+  const d = document.createElement('button');
+  d.className = 'ba-dot' + (i===0?' active':'');
+  d.addEventListener('click', ()=> loadBA(i));
+  baDots.appendChild(d);
+});
+loadBA(0);
+
+/* ---------- 4. Carrousel galerie (photos + vidéo) ---------- */
+const track = document.getElementById('carouselTrack');
+const slides = [...track.children];
+const cDots = document.getElementById('cDots');
+const galVideo = document.getElementById('galVideo');
+let cIndex = 0, cTimer;
+
+/* placeholders galerie si une image manque */
+const phGal = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%231c1c20'/><text x='50%' y='50%' fill='%23e8141b' font-family='sans-serif' font-size='30' font-weight='bold' text-anchor='middle'>GALERIE — PHOTO</text></svg>";
+track.querySelectorAll('img').forEach(img=>{
+  img.onerror = ()=>{ img.onerror=null; img.src = phGal; };
+});
+
+slides.forEach((_,i)=>{
+  const d = document.createElement('button');
+  d.className = 'c-dot' + (i===0?' active':'');
+  d.addEventListener('click', ()=> goCarousel(i));
+  cDots.appendChild(d);
+});
+function goCarousel(i){
+  cIndex = (i + slides.length) % slides.length;
+  track.style.transform = `translateX(-${cIndex*100}%)`;
+  [...cDots.children].forEach((d,j)=> d.classList.toggle('active', j===cIndex));
+  if(galVideo){ cIndex===0 ? galVideo.play().catch(()=>{}) : galVideo.pause(); }
+  resetCarouselTimer();
+}
+document.getElementById('cPrev').addEventListener('click', ()=> goCarousel(cIndex-1));
+document.getElementById('cNext').addEventListener('click', ()=> goCarousel(cIndex+1));
+function resetCarouselTimer(){
+  clearTimeout(cTimer);
+  cTimer = setTimeout(()=> goCarousel(cIndex+1), 6000);
+}
+resetCarouselTimer();
+let cStartX=0;
+track.addEventListener('touchstart',e=> cStartX=e.touches[0].clientX);
+track.addEventListener('touchend',e=>{
+  const dx = e.changedTouches[0].clientX - cStartX;
+  if(Math.abs(dx)>50) goCarousel(cIndex + (dx<0?1:-1));
+});
+if(galVideo) galVideo.play().catch(()=>{});
+
+/* ---------- 5. Compteurs animés (stats) ---------- */
+const statsIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseFloat(el.dataset.count);
+    const decimals = (el.dataset.count.indexOf('.')>-1)?1:0;
+    const uSpan = el.querySelector('.u');
+    const uText = uSpan ? uSpan.outerHTML : '';
+    const uFirst = el.innerHTML.trim().startsWith('<span');
+    let cur = 0;
+    const step = target/60;
+    const tick = ()=>{
+      cur += step;
+      if(cur >= target) cur = target;
+      const val = cur.toFixed(decimals);
+      el.innerHTML = uFirst ? uText+val : val+uText;
+      if(cur < target) requestAnimationFrame(tick);
+    };
+    tick();
+    statsIO.unobserve(el);
+  });
+},{threshold:.6});
+document.querySelectorAll('.stat .num').forEach(el=> statsIO.observe(el));
+
+/* ---------- 6. Formulaire de réservation → Netlify Forms ---------- */
+document.getElementById('devisForm').addEventListener('submit', async function(ev){
+  ev.preventDefault();
+  const note = document.getElementById('formNote');
+  const btn  = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Envoi en cours…';
+  btn.disabled = true;
+
+  const formData = new FormData(this);
+
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(formData).toString()
+    });
+    note.textContent = "✓ Merci ! Votre demande a bien été reçue, nous vous recontactons rapidement.";
+    note.style.color = '#1a9d4a';
+    note.style.fontWeight = '600';
+    this.reset();
+    btn.textContent = 'Envoyer ma demande →';
+    btn.disabled = false;
+  } catch(err) {
+    note.textContent = "❌ Erreur d'envoi. Contactez-nous directement par WhatsApp.";
+    note.style.color = '#e8141b';
+    btn.textContent = 'Envoyer ma demande →';
+    btn.disabled = false;
+  }
+});
+</script>
+
+<!-- ======================= MODALS SERVICES ======================= -->
+
+<!-- MODAL 1 : NETTOYAGE AUTO -->
+<div class="modal-overlay" id="modal-auto" role="dialog" aria-modal="true" aria-label="Nettoyage automobile">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <button class="modal-close" data-close="modal-auto" aria-label="Fermer">✕</button>
+    <div class="modal-gallery">
+      <!-- Photos de rendu voiture — remplace par tes vraies images -->
+      <img src="assets/images/apres-1.jpg" alt="Siège avant nettoyé URHUS AUTO"
+           onerror="this.parentElement.innerHTML='<div class=modal-gallery-ph>🚗</div>'">
+      <img src="assets/images/apres-2.jpg" alt="Moquette nettoyée URHUS AUTO"
+           onerror="this.style.display='none'">
+      <img src="assets/images/apres-3.jpg" alt="Habitacle nettoyé URHUS AUTO"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="modal-body">
+      <span class="modal-eyebrow">Prestation 01</span>
+      <h2 class="modal-title">Nettoyage Auto</h2>
+      <p class="modal-desc">
+        Nous nous déplaçons directement chez vous avec tout le matériel professionnel.
+        Aspirateur industriel, vapeur haute pression, produits désinfectants — on prend
+        en charge l'intérieur complet : sièges, ceintures, moquettes, plastiques, vitres,
+        tableau de bord et coffre. L'extérieur est également disponible sur demande.
+      </p>
+      <div class="modal-tarifs">
+        <h4>Tarifs indicatifs</h4>
+        <div class="tarif-list">
+          <div class="tarif-row">
+            <div class="tarif-label">Citadine / Berline
+              <small>Ex : Clio, 208, Golf</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>80 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">SUV / Monospace
+              <small>Ex : 3008, Touareg, Scenic</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>100 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">Utilitaire / Van
+              <small>Ex : Kangoo, Transit</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>120 €</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="modal-note">* Prix définitifs donnés après évaluation. Déplacement inclus.</p>
+      <div class="modal-actions">
+        <a href="#contact" class="btn btn-primary" data-close="modal-auto">Demander un devis →</a>
+        <a href="https://wa.me/33635540220" class="btn btn-dark" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2 : CANAPÉS -->
+<div class="modal-overlay" id="modal-canape" role="dialog" aria-modal="true" aria-label="Nettoyage canapé">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <button class="modal-close" data-close="modal-canape" aria-label="Fermer">✕</button>
+    <div class="modal-gallery">
+      <img src="assets/images/galerie-2.jpg" alt="Canapé nettoyé URHUS AUTO"
+           onerror="this.parentElement.innerHTML='<div class=modal-gallery-ph>🛋️</div>'">
+      <img src="assets/images/galerie-3.jpg" alt="Canapé tissu après nettoyage"
+           onerror="this.style.display='none'">
+      <img src="assets/images/galerie-4.jpg" alt="Détail tissu nettoyé"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="modal-body">
+      <span class="modal-eyebrow">Prestation 02</span>
+      <h2 class="modal-title">Canapés</h2>
+      <p class="modal-desc">
+        Shampooinage et détachage en profondeur de vos canapés, fauteuils et méridienne.
+        Nos produits professionnels s'attaquent aux taches tenaces, aux odeurs et aux
+        acariens — sans endommager les fibres. Résultat visible dès le séchage (2–4h).
+        Compatible tissu, microfibre, velours, lin.
+      </p>
+      <div class="modal-tarifs">
+        <h4>Tarifs indicatifs</h4>
+        <div class="tarif-list">
+          <div class="tarif-row">
+            <div class="tarif-label">2 places
+              <small>Canapé compact</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>60 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">3 places
+              <small>Canapé standard</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>80 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">Canapé d'angle
+              <small>Grande surface</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>110 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">Fauteuil seul</div>
+            <div class="tarif-prix">À partir de<br><span>35 €</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="modal-note">* Prix définitifs donnés après évaluation. Déplacement inclus.</p>
+      <div class="modal-actions">
+        <a href="#contact" class="btn btn-primary" data-close="modal-canape">Demander un devis →</a>
+        <a href="https://wa.me/33635540220" class="btn btn-dark" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 3 : MATELAS -->
+<div class="modal-overlay" id="modal-matelas" role="dialog" aria-modal="true" aria-label="Nettoyage matelas">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <button class="modal-close" data-close="modal-matelas" aria-label="Fermer">✕</button>
+    <div class="modal-gallery">
+      <img src="assets/images/galerie-3.jpg" alt="Matelas nettoyé URHUS AUTO"
+           onerror="this.parentElement.innerHTML='<div class=modal-gallery-ph>🛏️</div>'">
+      <img src="assets/images/galerie-4.jpg" alt="Matelas double nettoyé"
+           onerror="this.style.display='none'">
+      <img src="assets/images/galerie-2.jpg" alt="Résultat matelas propre"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="modal-body">
+      <span class="modal-eyebrow">Prestation 03</span>
+      <h2 class="modal-title">Matelas</h2>
+      <p class="modal-desc">
+        Nettoyage en profondeur et désinfection aux UV de vos matelas. On élimine
+        acariens, bactéries, taches et odeurs pour un couchage sain et assaini.
+        Idéal avant l'arrivée d'un bébé, après une maladie, lors d'un déménagement
+        ou tout simplement pour un entretien annuel.
+      </p>
+      <div class="modal-tarifs">
+        <h4>Tarifs indicatifs</h4>
+        <div class="tarif-list">
+          <div class="tarif-row">
+            <div class="tarif-label">1 personne — 90×190
+              <small>Simple ou enfant</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>45 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">2 personnes — 140×190
+              <small>Double standard</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>65 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">2 personnes — 160×200
+              <small>Grand confort / King</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>80 €</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="modal-note">* Prix définitifs donnés après évaluation. Déplacement inclus.</p>
+      <div class="modal-actions">
+        <a href="#contact" class="btn btn-primary" data-close="modal-matelas">Demander un devis →</a>
+        <a href="https://wa.me/33635540220" class="btn btn-dark" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 4 : TAPIS & MOQUETTES -->
+<div class="modal-overlay" id="modal-tapis" role="dialog" aria-modal="true" aria-label="Nettoyage tapis">
+  <div class="modal-box">
+    <div class="modal-drag"></div>
+    <button class="modal-close" data-close="modal-tapis" aria-label="Fermer">✕</button>
+    <div class="modal-gallery">
+      <img src="assets/images/galerie-4.jpg" alt="Tapis nettoyé URHUS AUTO"
+           onerror="this.parentElement.innerHTML='<div class=modal-gallery-ph>🧶</div>'">
+      <img src="assets/images/galerie-2.jpg" alt="Moquette nettoyée"
+           onerror="this.style.display='none'">
+      <img src="assets/images/galerie-3.jpg" alt="Résultat tapis propre"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="modal-body">
+      <span class="modal-eyebrow">Prestation 04</span>
+      <h2 class="modal-title">Tapis & Moquettes</h2>
+      <p class="modal-desc">
+        Extraction en profondeur des salissures incrustées dans vos tapis et moquettes.
+        Les couleurs sont ravivées, les fibres assainies et débarrassées des allergènes.
+        Séchage rapide grâce à notre technique d'extraction basse humidité.
+        Compatible laine, synthétique, velours, sisal.
+      </p>
+      <div class="modal-tarifs">
+        <h4>Tarifs indicatifs</h4>
+        <div class="tarif-list">
+          <div class="tarif-row">
+            <div class="tarif-label">Petit tapis
+              <small>Jusqu'à 2 m²</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>30 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">Tapis moyen
+              <small>2 à 6 m²</small>
+            </div>
+            <div class="tarif-prix">À partir de<br><span>55 €</span></div>
+          </div>
+          <div class="tarif-row">
+            <div class="tarif-label">Grand tapis / moquette
+              <small>+ de 6 m²</small>
+            </div>
+            <div class="tarif-prix">Sur<br><span>devis</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="modal-note">* Prix définitifs donnés après évaluation. Déplacement inclus.</p>
+      <div class="modal-actions">
+        <a href="#contact" class="btn btn-primary" data-close="modal-tapis">Demander un devis →</a>
+        <a href="https://wa.me/33635540220" class="btn btn-dark" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ====================================================================
+   MODALS — ouverture / fermeture
+   ==================================================================== */
+const serviceMap = {
+  auto:'modal-auto', canape:'modal-canape', matelas:'modal-matelas', tapis:'modal-tapis'
+};
+
+function openModal(id){
+  const m = document.getElementById(id);
+  if(!m) return;
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+  m.querySelector('.modal-box').scrollTop = 0;
+}
+function closeModal(id){
+  const m = document.getElementById(id);
+  if(!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* Ouvrir depuis les cartes services */
+document.querySelectorAll('.service-card[data-service]').forEach(card=>{
+  card.addEventListener('click', ()=> openModal(serviceMap[card.dataset.service]));
+});
+
+/* Fermer via bouton ✕ ou les CTA qui ont data-close */
+document.querySelectorAll('[data-close]').forEach(el=>{
+  el.addEventListener('click', (e)=>{
+    closeModal(el.dataset.close);
+  });
+});
+
+/* Fermer en cliquant sur l'overlay (fond flouté) */
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+  overlay.addEventListener('click', (e)=>{
+    if(e.target === overlay) closeModal(overlay.id);
+  });
+});
+
+/* Fermer avec Échap */
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.open').forEach(m=> closeModal(m.id));
+  }
+});
+</script>
+</body>
+</html>
